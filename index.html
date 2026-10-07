@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Shivani Ravi - Aspiring Software Engineer & Information Science Student showcasing projects, technical skills, education timeline, and hackathons.">
+  <meta name="keywords" content="Shivani Ravi, Software Engineer Portfolio, Information Science, Java, Web Development, Arduino, Smart India Hackathon">
+  <meta name="author" content="Shivani Ravi">
+  <title>Shivani Ravi | Aspiring Software Engineer Portfolio</title>
+  
+  <!-- Google Fonts for Modern Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background Canvas / Overlay with Space Background -->
+  <div class="space-bg-layer" aria-hidden="true"></div>
+  <div class="stars-overlay" aria-hidden="true"></div>
+
+  <!-- ================= HEADER & NAVIGATION ================= -->
+  <header class="site-header" id="header">
+    <div class="container header-container">
+      <a href="#hero" class="brand-logo" id="brand-logo" aria-label="Shivani Ravi Home">
+        <span class="logo-code">&lt;</span>
+        <span class="logo-name">Shivani</span>
+        <span class="logo-accent">.Dev</span>
+        <span class="logo-code">/&gt;</span>
+      </a>
+
+      <!-- Primary Navigation -->
+      <nav class="main-nav" id="main-nav" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#hero" class="nav-link active">Home</a></li>
+          <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+          <li class="nav-item"><a href="#timeline" class="nav-link">Timeline</a></li>
+          <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+          <li class="nav-item"><a href="#certifications" class="nav-link">Certifications</a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Action Controls (Theme Toggle & Resume Button) -->
+      <div class="header-actions">
+        <!-- ================= NIGHT MODE / THEME TOGGLE PLACEHOLDER ================= -->
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Night/Light Mode" title="Toggle Theme">
+          <span class="theme-icon sun-icon" aria-hidden="true"><i class="fa-solid fa-sun"></i></span>
+          <span class="theme-icon moon-icon" aria-hidden="true"><i class="fa-solid fa-moon"></i></span>
+          <span class="sr-only">Toggle theme</span>
+        </button>
+
+        <a href="Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm resume-btn">
+          <i class="fa-solid fa-file-arrow-down"></i>
+          <span>Resume</span>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= MAIN CONTENT WRAPPER ================= -->
+  <main id="main-content">
+
+    <!-- ================= HERO SECTION (MODERN COSMIC GLASSMORPHISM) ================= -->
+    <section class="section hero-section" id="hero" aria-label="Introduction Hero">
+      <div class="container hero-container">
+        <!-- Hero Information Column -->
+        <div class="hero-content">
+          <!-- Availability Badge -->
+          <div class="hero-badge">
+            <span class="status-indicator" aria-hidden="true"></span>
+            <span class="badge-text">Open to Software Engineering Opportunities &amp; Internships</span>
+          </div>
+
+          <!-- Welcoming Title -->
+          <h1 class="hero-title">
+            <span class="hero-greeting">Welcome to my portfolio &mdash;</span>
+            <span class="hero-name-row">
+              Hi, I'm <span class="text-gradient">Shivani Ravi</span>
+            </span>
+          </h1>
+
+          <!-- Brief Tagline -->
+          <p class="hero-subtitle">
+            <span class="role-highlight">Aspiring Software Engineer</span>
+            <span class="role-separator">&bull;</span>
+            <span class="role-sub">Information Science Scholar (VTU '29)</span>
+          </p>
+
+          <p class="hero-description">
+            Passionate about building scalable software, solving algorithmic challenges with Java, and designing intelligent real-world IoT systems. Eager to bring curiosity, strong technical foundations, and rapid learning to forward-thinking engineering teams.
+          </p>
+
+          <!-- System Theme Detection & Night Mode Toggle Widget -->
+          <div class="hero-theme-widget glass-panel" id="hero-theme-widget">
+            <div class="theme-widget-info">
+              <span class="theme-sensor-icon"><i class="fa-solid fa-circle-half-stroke"></i></span>
+              <div class="theme-sensor-text">
+                <span class="sensor-label">System Theme Detector:</span>
+                <strong class="sensor-value" id="theme-detected-mode">Media Query (Dark Mode)</strong>
+              </div>
+            </div>
+            <button id="hero-theme-toggle" class="btn btn-sm btn-glass theme-switch-btn" aria-label="Toggle Night/Day Mode" title="Toggle Theme">
+              <span class="theme-btn-icon"><i class="fa-solid fa-sun"></i></span>
+              <span class="theme-btn-label">Switch Theme</span>
+            </button>
+          </div>
+
+          <!-- Call-To-Action Button Group -->
+          <div class="hero-cta-group">
+            <a href="#projects" class="btn btn-primary">
+              <span>Explore Projects</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a href="Resume.pdf" download class="btn btn-glass">
+              <i class="fa-solid fa-file-arrow-down"></i>
+              <span>Download CV</span>
+            </a>
+            <a href="#contact" class="btn btn-ghost">
+              <span>Get in Touch</span>
+            </a>
+          </div>
+
+          <!-- Social Quick Links -->
+          <div class="hero-social-links">
+            <span class="social-label">Connect:</span>
+            <a href="https://github.com/shivaniiseait-dev" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="GitHub Profile">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://linkedin.com/in/shivani-ravi-1b54a5384" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn Profile">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="mailto:shivanitr133@gmail.com" class="social-icon-btn" aria-label="Send Email">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+            <a href="tel:+918904524648" class="social-icon-btn" aria-label="Call Direct">
+              <i class="fa-solid fa-phone"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero Visual Profile Card -->
+        <div class="hero-visual">
+          <div class="profile-card-glow"></div>
+          <div class="profile-card glass-panel">
+            <div class="profile-image-wrapper">
+              <img src="professional photo.jpg" alt="Shivani Ravi - Software Engineer" class="profile-img" loading="eager">
+              <div class="profile-chip">
+                <i class="fa-solid fa-code"></i>
+                <span>Java &amp; Tech Explorer</span>
+              </div>
+            </div>
+            <div class="profile-quick-stats">
+              <div class="stat-item">
+                <span class="stat-number">4+</span>
+                <span class="stat-label">Projects</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat-item">
+                <span class="stat-number">SIH</span>
+                <span class="stat-label">Hackathon</span>
+              </div>
+              <div class="stat-divider"></div>
+              <div class="stat-item">
+                <span class="stat-number">2029</span>
+                <span class="stat-label">B.E. Cohort</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll Down Indicator -->
+      <a href="#about" class="scroll-down-hint" aria-label="Scroll to About section">
+        <span>Scroll to explore</span>
+        <i class="fa-solid fa-chevron-down"></i>
+      </a>
+    </section>
+
+    <!-- ================= ABOUT ME SECTION ================= -->
+    <section class="section about-section" id="about" aria-label="About Me">
+      <div class="container">
+        <!-- Section Header -->
+        <header class="section-header">
+          <p class="section-tag">01 // Profile &amp; Bio</p>
+          <h2 class="section-title">About <span class="text-gradient">Me</span></h2>
+          <div class="section-underline"></div>
+        </header>
+
+        <!-- Main About Grid: Profile & Bio -->
+        <div class="about-grid">
+          <!-- Left Column: Profile Card & Quick Info -->
+          <div class="about-profile-column">
+            <div class="about-profile-card glass-panel">
+              <div class="about-avatar-container">
+                <img src="professional photo.jpg" alt="Shivani Ravi Profile" class="about-avatar-img" loading="lazy">
+                <div class="about-avatar-badge">
+                  <span class="live-dot" aria-hidden="true"></span>
+                  <span>B.E. ISE Cohort 2025–29</span>
+                </div>
+              </div>
+
+              <div class="about-profile-info">
+                <h3 class="about-name">Shivani Ravi</h3>
+                <p class="about-title">Aspiring Software Engineer</p>
+                <p class="about-college"><i class="fa-solid fa-graduation-cap"></i> AIT Chikkamagaluru (VTU)</p>
+              </div>
+
+              <!-- Quick Stats Minimalist Badges -->
+              <div class="about-mini-stats">
+                <div class="mini-stat">
+                  <span class="mini-stat-num">4+</span>
+                  <span class="mini-stat-lbl">Built Projects</span>
+                </div>
+                <div class="mini-stat-sep"></div>
+                <div class="mini-stat">
+                  <span class="mini-stat-num">SIH</span>
+                  <span class="mini-stat-lbl">National Hackathon</span>
+                </div>
+                <div class="mini-stat-sep"></div>
+                <div class="mini-stat">
+                  <span class="mini-stat-num">90.2%</span>
+                  <span class="mini-stat-lbl">Academic Dist.</span>
+                </div>
+              </div>
+
+              <!-- Direct Contact / CV Buttons -->
+              <div class="about-card-actions">
+                <a href="Resume.pdf" download class="btn btn-primary btn-sm btn-block">
+                  <i class="fa-solid fa-download"></i> Download Full CV
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Biography, Career Highlights & Personal Interests -->
+          <div class="about-bio-column">
+            <!-- Bio Narrative -->
+            <div class="bio-card glass-panel">
+              <h3 class="bio-heading">Driven by curiosity, grounded in fundamentals.</h3>
+              <p class="bio-paragraph">
+                I am an undergraduate in <strong>Information Science &amp; Engineering (2025–2029)</strong> at 
+                <em>Adichunchanagiri Institute of Technology, Chikkamagaluru</em> (affiliated with Visvesvaraya Technological University). 
+                As an aspiring software engineer, my journey is driven by an eagerness to write clean, maintainable code with Java, 
+                master object-oriented principles, and build software that interfaces with real-world smart systems.
+              </p>
+              <p class="bio-paragraph">
+                My academic foundation is backed by continuous discipline—achieving <strong>90.24% in 10th standard</strong> and 
+                <strong>77.83% in Pre-University</strong>—which shaped my analytical problem-solving mindset and dedication to continuous learning.
+              </p>
+            </div>
+
+            <!-- Career Highlights -->
+            <div class="career-highlights-section">
+              <h4 class="sub-section-title"><i class="fa-solid fa-award"></i> Career &amp; Academic Highlights</h4>
+              <div class="highlights-grid">
+                <div class="highlight-item glass-panel">
+                  <div class="highlight-icon"><i class="fa-solid fa-trophy"></i></div>
+                  <div class="highlight-text">
+                    <h5>Smart India Hackathon (SIH)</h5>
+                    <p>Participated in national-level hackathon innovation, collaborating in a multidisciplinary team under pressure.</p>
+                  </div>
+                </div>
+
+                <div class="highlight-item glass-panel">
+                  <div class="highlight-icon"><i class="fa-solid fa-microchip"></i></div>
+                  <div class="highlight-text">
+                    <h5>Hardware &amp; IoT Prototyping</h5>
+                    <p>Designed working real-world models for piezoelectric electricity generation, kitchen safety, and smart waste management.</p>
+                  </div>
+                </div>
+
+                <div class="highlight-item glass-panel">
+                  <div class="highlight-icon"><i class="fa-solid fa-code"></i></div>
+                  <div class="highlight-text">
+                    <h5>Object-Oriented Programming</h5>
+                    <p>Strengthening software engineering fundamentals in Java, data structures, and modular system design.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Personal Interests -->
+            <div class="personal-interests-section">
+              <h4 class="sub-section-title"><i class="fa-solid fa-heart"></i> Personal Interests &amp; Passions</h4>
+              <div class="interests-tags">
+                <span class="interest-tag"><i class="fa-brands fa-java"></i> Java Programming</span>
+                <span class="interest-tag"><i class="fa-solid fa-robot"></i> Embedded IoT &amp; Arduino</span>
+                <span class="interest-tag"><i class="fa-solid fa-leaf"></i> Renewable Energy Tech</span>
+                <span class="interest-tag"><i class="fa-solid fa-users"></i> Hackathon Collaboration</span>
+                <span class="interest-tag"><i class="fa-solid fa-brain"></i> Algorithmic Puzzles</span>
+                <span class="interest-tag"><i class="fa-solid fa-laptop-code"></i> Modern Web Technologies</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Video Presentation Sub-card -->
+        <div class="about-video-row">
+          <div class="video-card glass-panel">
+            <div class="video-card-header">
+              <div class="window-controls">
+                <span class="control-dot red"></span>
+                <span class="control-dot yellow"></span>
+                <span class="control-dot green"></span>
+              </div>
+              <span class="video-title-tag"><i class="fa-solid fa-play"></i> 1-Minute Introduction Pitch</span>
+            </div>
+            
+            <div class="video-wrapper">
+              <video controls preload="metadata" poster="Space-Background-Image-2.jpg" class="intro-video" id="intro-video">
+                <source src="self Introduction.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+
+            <div class="video-caption">
+              <i class="fa-solid fa-circle-play"></i>
+              <p>Watch my short video pitch introducing my educational background, engineering passions, and career aspirations.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SKILLS SECTION ================= -->
+    <section class="section skills-section" id="skills" aria-label="Technical and Soft Skills">
+      <div class="container">
+        <!-- Section Header -->
+        <header class="section-header">
+          <p class="section-tag">02 // Core Competencies</p>
+          <h2 class="section-title">Skills &amp; <span class="text-gradient">Proficiencies</span></h2>
+          <div class="section-underline"></div>
+          <p class="section-desc">Extracted from technical coursework, hands-on IoT projects, and national hackathon experience.</p>
+        </header>
+
+        <div class="skills-categories-grid">
+
+          <!-- ================= CATEGORY 1: CORE PROGRAMMING ================= -->
+          <!-- Represents the primary technical skill (Java) explicitly listed in Resume -->
+          <article class="skills-category-card glass-panel">
+            <div class="category-header">
+              <div class="category-icon java-icon"><i class="fa-brands fa-java"></i></div>
+              <div class="category-title-group">
+                <h3>Programming &amp; Algorithms</h3>
+                <span class="category-subtitle">Core Computing &amp; Logic</span>
+              </div>
+            </div>
+
+            <div class="skill-meter-list">
+              <!-- Skill: Java (Core Language from Resume Technical Skills) -->
+              <div class="skill-meter-item">
+                <div class="skill-meta">
+                  <span class="skill-name"><i class="fa-brands fa-java"></i> Java (Core, OOP, Collections)</span>
+                  <span class="skill-percentage">85%</span>
+                </div>
+                <div class="progress-track" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                  <div class="progress-fill fill-cyan" style="width: 85%;"></div>
+                </div>
+                <span class="skill-caption">Object-oriented programming, modular design &amp; exception handling</span>
+              </div>
+
+              <!-- Skill: Data Structures & OOP Foundations (Academic & Algorithmic Focus) -->
+              <div class="skill-meter-item">
+                <div class="skill-meta">
+                  <span class="skill-name"><i class="fa-solid fa-sitemap"></i> Data Structures &amp; OOP Design</span>
+                  <span class="skill-percentage">80%</span>
+                </div>
+                <div class="progress-track" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                  <div class="progress-fill fill-purple" style="width: 80%;"></div>
+                </div>
+                <span class="skill-caption">Arrays, linked structures, recursion &amp; algorithmic problem solving</span>
+              </div>
+
+              <!-- Skill: C/C++ Embedded Scripting (From Arduino Waste Segregation Project) -->
+              <div class="skill-meter-item">
+                <div class="skill-meta">
+                  <span class="skill-name"><i class="fa-solid fa-code"></i> C / C++ (Embedded Logic)</span>
+                  <span class="skill-percentage">75%</span>
+                </div>
+                <div class="progress-track" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                  <div class="progress-fill fill-indigo" style="width: 75%;"></div>
+                </div>
+                <span class="skill-caption">Embedded micro-controller sketches, sensor polling &amp; control</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- ================= CATEGORY 2: HARDWARE & EMBEDDED IOT ================= -->
+          <!-- Derived from Resume Projects: Footstep Electricity, Kitchen Safety, Waste Segregation -->
+          <article class="skills-category-card glass-panel">
+            <div class="category-header">
+              <div class="category-icon iot-icon"><i class="fa-solid fa-microchip"></i></div>
+              <div class="category-title-group">
+                <h3>Hardware, Embedded &amp; IoT</h3>
+                <span class="category-subtitle">Applied Project Prototyping</span>
+              </div>
+            </div>
+
+            <div class="skill-meter-list">
+              <!-- Skill: Arduino Microcontrollers (From Smart Waste Segregation project) -->
+              <div class="skill-meter-item">
+                <div class="skill-meta">
+                  <span class="skill-name"><i class="fa-solid fa-microchip"></i> Arduino Microcontrollers</span>
+                  <span class="skill-percentage">85%</span>
+                </div>
+                <div class="progress-track" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                  <div class="progress-fill fill-emerald" style="width: 85%;"></div>
+                </div>
+                <span class="skill-caption">Arduino Uno/Nano, pin architecture &amp; servo motor actuation</span>
+              </div>
+
+              <!-- Skill: Sensor Integration (From Kitchen Safety & Footstep Electricity projects) -->
+              <div class="skill-meter-item">
+                <div class="skill-meta">
+                  <span class="skill-name"><i class="fa-solid fa-wave-square"></i> Sensor Integration &amp; Transducers</span>
+                  <span class="skill-percentage">82%</span>
+                </div>
+                <div class="progress-track" role="progressbar" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100">
+                  <div class="progress-fill fill-cyan" style="width: 82%;"></div>
+                </div>
+                <span class="skill-caption">Piezoelectric transducers, smoke/gas sensors &amp; inductive probes</span>
+              </div>
+
+              <!-- Skill: Real-Time Monitoring & Automation (From Kitchen Safety project) -->
+              <div class="skill-meter-item">
+                <div class="skill-meta">
+                  <span class="skill-name"><i class="fa-solid fa-sliders"></i> Real-Time Automated Systems</span>
+                  <span class="skill-percentage">80%</span>
+                </div>
+                <div class="progress-track" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                  <div class="progress-fill fill-purple" style="width: 80%;"></div>
+                </div>
+                <span class="skill-caption">Threshold detection, appliance monitoring &amp; hazard prevention</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- ================= CATEGORY 3: WEB & FRONTEND FOUNDATIONS ================= -->
+          <!-- Essential computer science competencies for modern software engineering -->
+          <article class="skills-category-card glass-panel">
+            <div class="category-header">
+              <div class="category-icon web-icon"><i class="fa-brands fa-html5"></i></div>
+              <div class="category-title-group">
+                <h3>Web &amp; Software Basics</h3>
+                <span class="category-subtitle">Full-Stack Foundations</span>
+              </div>
+            </div>
+
+            <div class="skill-meter-list">
+              <!-- Skill: Semantic HTML5 & Modern CSS3 -->
+              <div class="skill-meter-item">
+                <div class="skill-meta">
+                  <span class="skill-name"><i class="fa-brands fa-html5"></i> Semantic HTML5 &amp; CSS3</span>
+                  <span class="skill-percentage">88%</span>
+                </div>
+                <div class="progress-track" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100">
+                  <div class="progress-fill fill-indigo" style="width: 88%;"></div>
+                </div>
+                <span class="skill-caption">Clean semantics, Flexbox, Grid, glassmorphism &amp; CSS custom properties</span>
+              </div>
+
+              <!-- Skill: JavaScript Basics & DOM Manipulation -->
+              <div class="skill-meter-item">
+                <div class="skill-meta">
+                  <span class="skill-name"><i class="fa-brands fa-js"></i> JavaScript (ES6+ &amp; DOM)</span>
+                  <span class="skill-percentage">75%</span>
+                </div>
+                <div class="progress-track" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                  <div class="progress-fill fill-gold" style="width: 75%;"></div>
+                </div>
+                <span class="skill-caption">Dynamic interactions, event handling, localStorage &amp; media queries</span>
+              </div>
+
+              <!-- Skill: Responsive & Accessible Design -->
+              <div class="skill-meter-item">
+                <div class="skill-meta">
+                  <span class="skill-name"><i class="fa-solid fa-mobile-screen"></i> Responsive UI &amp; Accessibility</span>
+                  <span class="skill-percentage">84%</span>
+                </div>
+                <div class="progress-track" role="progressbar" aria-valuenow="84" aria-valuemin="0" aria-valuemax="100">
+                  <div class="progress-fill fill-cyan" style="width: 84%;"></div>
+                </div>
+                <span class="skill-caption">Adaptive breakpoints, cross-device compatibility &amp; accessible markup</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- ================= CATEGORY 4: TOOLS & WORKFLOWS ================= -->
+          <!-- Extracted from GitHub link and developer workflow tools -->
+          <article class="skills-category-card glass-panel">
+            <div class="category-header">
+              <div class="category-icon tools-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+              <div class="category-title-group">
+                <h3>Developer Tools &amp; Methods</h3>
+                <span class="category-subtitle">Engineering Environments</span>
+              </div>
+            </div>
+
+            <div class="skill-meter-list">
+              <!-- Skill: Git & GitHub (From github.com/shivaniiseait-dev on resume) -->
+              <div class="skill-meter-item">
+                <div class="skill-meta">
+                  <span class="skill-name"><i class="fa-brands fa-github"></i> Git &amp; GitHub Version Control</span>
+                  <span class="skill-percentage">80%</span>
+                </div>
+                <div class="progress-track" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                  <div class="progress-fill fill-purple" style="width: 80%;"></div>
+                </div>
+                <span class="skill-caption">Source code tracking, branches, commit workflows &amp; repository hosting</span>
+              </div>
+
+              <!-- Skill: IDEs & Toolchains (VS Code, Arduino IDE, Eclipse) -->
+              <div class="skill-meter-item">
+                <div class="skill-meta">
+                  <span class="skill-name"><i class="fa-solid fa-laptop-code"></i> IDEs (VS Code, Arduino, Eclipse)</span>
+                  <span class="skill-percentage">85%</span>
+                </div>
+                <div class="progress-track" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                  <div class="progress-fill fill-emerald" style="width: 85%;"></div>
+                </div>
+                <span class="skill-caption">Code execution, extensions, compiling &amp; serial terminal monitoring</span>
+              </div>
+
+              <!-- Skill: Agile Hackathon Delivery (From Smart India Hackathon participation) -->
+              <div class="skill-meter-item">
+                <div class="skill-meta">
+                  <span class="skill-name"><i class="fa-solid fa-trophy"></i> Agile Sprint &amp; Hackathon Delivery</span>
+                  <span class="skill-percentage">85%</span>
+                </div>
+                <div class="progress-track" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                  <div class="progress-fill fill-gold" style="width: 85%;"></div>
+                </div>
+                <span class="skill-caption">Rapid problem ideation, prototype defense &amp; team sprint milestones</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- ================= CATEGORY 5: PROFESSIONAL SOFT SKILLS ================= -->
+          <!-- Directly extracted from Resume section "SOFT SKILLS: Communication, English, Teamwork" -->
+          <article class="skills-category-card glass-panel wide-span">
+            <div class="category-header">
+              <div class="category-icon soft-icon"><i class="fa-solid fa-comments"></i></div>
+              <div class="category-title-group">
+                <h3>Professional Soft Skills</h3>
+                <span class="category-subtitle">Extracted Directly From Resume</span>
+              </div>
+            </div>
+
+            <div class="soft-skills-showcase">
+              <!-- Soft Skill 1: Communication (From Resume) -->
+              <div class="soft-skill-card">
+                <div class="soft-icon-badge"><i class="fa-solid fa-bullhorn"></i></div>
+                <div class="soft-card-body">
+                  <h4>Effective Communication</h4>
+                  <p>Articulating technical design clearly in documentation, project demos, and team syncs.</p>
+                  <span class="soft-tier-pill"><i class="fa-solid fa-check"></i> Resume Verified</span>
+                </div>
+              </div>
+
+              <!-- Soft Skill 2: English (From Resume) -->
+              <div class="soft-skill-card">
+                <div class="soft-icon-badge"><i class="fa-solid fa-language"></i></div>
+                <div class="soft-card-body">
+                  <h4>Professional English</h4>
+                  <p>Fluent verbal articulation and structured technical writing for global software squads.</p>
+                  <span class="soft-tier-pill"><i class="fa-solid fa-check"></i> Resume Verified</span>
+                </div>
+              </div>
+
+              <!-- Soft Skill 3: Teamwork (From Resume & Smart India Hackathon) -->
+              <div class="soft-skill-card">
+                <div class="soft-icon-badge"><i class="fa-solid fa-people-group"></i></div>
+                <div class="soft-card-body">
+                  <h4>Teamwork &amp; Collaboration</h4>
+                  <p>Thriving in multi-disciplinary groups, demonstrated during national hackathon participation.</p>
+                  <span class="soft-tier-pill"><i class="fa-solid fa-check"></i> Resume Verified</span>
+                </div>
+              </div>
+
+              <!-- Soft Skill 4: Problem Solving & Critical Thinking -->
+              <div class="soft-skill-card">
+                <div class="soft-icon-badge"><i class="fa-solid fa-brain"></i></div>
+                <div class="soft-card-body">
+                  <h4>Analytical Problem Solving</h4>
+                  <p>Deconstructing complex hardware-software edge cases with methodical root-cause analysis.</p>
+                  <span class="soft-tier-pill"><i class="fa-solid fa-check"></i> Core Strength</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= TIMELINE SECTION ================= -->
+    <section class="section timeline-section" id="timeline" aria-label="Education and Experience Timeline">
+      <div class="container">
+        <header class="section-header">
+          <p class="section-tag">03 // Academic &amp; Milestone Journey</p>
+          <h2 class="section-title">Education &amp; <span class="text-gradient">Timeline</span></h2>
+          <div class="section-underline"></div>
+        </header>
+
+        <div class="timeline-container">
+          <div class="timeline-line" aria-hidden="true"></div>
+
+          <!-- Timeline Item 1: B.E. Degree (Current) -->
+          <article class="timeline-item timeline-current">
+            <div class="timeline-marker">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <div class="timeline-content glass-panel">
+              <div class="timeline-meta">
+                <span class="timeline-date"><i class="fa-regular fa-calendar"></i> 2025 – 2029</span>
+                <span class="timeline-tag current">In Progress</span>
+              </div>
+              <h3 class="timeline-role">Bachelor of Engineering – Information Science &amp; Engineering</h3>
+              <h4 class="timeline-institution">Adichunchanagiri Institute of Technology, Chikkamagaluru</h4>
+              <p class="timeline-affil">Affiliated with Visvesvaraya Technological University (VTU), Karnataka</p>
+              <p class="timeline-desc">
+                Focusing on core computing principles, object-oriented software engineering, database design, computer networks, and full-stack software system architecture.
+              </p>
+            </div>
+          </article>
+
+          <!-- Timeline Item 2: Smart India Hackathon -->
+          <article class="timeline-item">
+            <div class="timeline-marker">
+              <i class="fa-solid fa-trophy"></i>
+            </div>
+            <div class="timeline-content glass-panel">
+              <div class="timeline-meta">
+                <span class="timeline-date"><i class="fa-regular fa-calendar"></i> National Event</span>
+                <span class="timeline-tag experience">Experience &amp; Contest</span>
+              </div>
+              <h3 class="timeline-role">Smart India Hackathon (SIH) – Participant</h3>
+              <h4 class="timeline-institution">Government of India / SIH Initiative</h4>
+              <p class="timeline-desc">
+                Contributed to innovative problem-solving in a fast-paced, high-pressure hackathon environment. Collaborated in a multi-disciplinary team to conceptualize, prototype, and defend technology-driven solutions for real-world nationwide challenges.
+              </p>
+            </div>
+          </article>
+
+          <!-- Timeline Item 3: PUC (12th Grade) -->
+          <article class="timeline-item">
+            <div class="timeline-marker">
+              <i class="fa-solid fa-book-open"></i>
+            </div>
+            <div class="timeline-content glass-panel">
+              <div class="timeline-meta">
+                <span class="timeline-date"><i class="fa-regular fa-calendar"></i> Higher Secondary</span>
+                <span class="timeline-score">Score: 77.83%</span>
+              </div>
+              <h3 class="timeline-role">Pre-University Course (PUC)</h3>
+              <h4 class="timeline-institution">Sahyadri Composite PU College</h4>
+              <p class="timeline-desc">
+                Strengthened analytical rigor, physics, and mathematical logic fundamentals that established the foundation for engineering problem solving.
+              </p>
+            </div>
+          </article>
+
+          <!-- Timeline Item 4: SSLC (10th Grade) -->
+          <article class="timeline-item">
+            <div class="timeline-marker">
+              <i class="fa-solid fa-award"></i>
+            </div>
+            <div class="timeline-content glass-panel">
+              <div class="timeline-meta">
+                <span class="timeline-date"><i class="fa-regular fa-calendar"></i> Secondary School</span>
+                <span class="timeline-score highlight">Score: 90.24%</span>
+              </div>
+              <h3 class="timeline-role">SSLC / 10th Standard (KSEB)</h3>
+              <h4 class="timeline-institution">Government High School, Kodlu</h4>
+              <p class="timeline-affil">Karnataka Secondary Education Examination Board</p>
+              <p class="timeline-desc">
+                Achieved distinction with 90.24%, developing strong academic discipline, leadership, and curiosity for scientific discovery.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PROJECTS SECTION ================= -->
+    <section class="section projects-section" id="projects" aria-label="Featured Software and Hardware Projects">
+      <div class="container">
+        <header class="section-header">
+          <p class="section-tag">04 // Practical Work</p>
+          <h2 class="section-title">Featured <span class="text-gradient">Projects</span></h2>
+          <div class="section-underline"></div>
+        </header>
+
+        <div class="projects-grid">
+          <!-- Project 1: Footstep Electricity Generation -->
+          <article class="project-card glass-panel">
+            <div class="project-card-banner">
+              <div class="project-icon-badge"><i class="fa-solid fa-shoe-prints"></i></div>
+              <span class="project-category">Renewable Energy &amp; IoT</span>
+            </div>
+            <div class="project-card-body">
+              <h3 class="project-title">Footstep Electricity Generation</h3>
+              <p class="project-description">
+                Engineered an eco-friendly energy harvesting model that captures kinetic energy from human footsteps using piezoelectric transducers to generate clean electrical voltage for small-scale storage and powering low-wattage devices.
+              </p>
+              <div class="project-tech-stack">
+                <span class="tech-tag">Piezoelectric Sensors</span>
+                <span class="tech-tag">Renewable Energy</span>
+                <span class="tech-tag">Circuit Design</span>
+                <span class="tech-tag">Embedded Logic</span>
+              </div>
+            </div>
+            <div class="project-card-footer">
+              <button class="btn-link" onclick="alert('Project details: Generates electricity through footstep kinetic energy conversion.')">
+                <span>View Details</span> <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </button>
+            </div>
+          </article>
+
+          <!-- Project 2: Real-Time Kitchen Safety & Appliance Monitoring -->
+          <article class="project-card glass-panel">
+            <div class="project-card-banner">
+              <div class="project-icon-badge"><i class="fa-solid fa-fire-burner"></i></div>
+              <span class="project-category">Safety &amp; Automation</span>
+            </div>
+            <div class="project-card-body">
+              <h3 class="project-title">Real-Time Kitchen Safety &amp; Appliance Monitoring</h3>
+              <p class="project-description">
+                Architected an intelligent sensor monitoring system that continuously tracks ambient temperature, smoke, gas leaks, and appliance electrical draw in real time, triggering instant alerts to prevent domestic hazards.
+              </p>
+              <div class="project-tech-stack">
+                <span class="tech-tag">Real-Time Monitoring</span>
+                <span class="tech-tag">Gas &amp; Smoke Sensors</span>
+                <span class="tech-tag">Hazard Prevention</span>
+                <span class="tech-tag">Automation</span>
+              </div>
+            </div>
+            <div class="project-card-footer">
+              <button class="btn-link" onclick="alert('Project details: Monitored kitchen safety conditions and electrical appliances in real time.')">
+                <span>View Details</span> <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </button>
+            </div>
+          </article>
+
+          <!-- Project 3: Smart Waste Segregation Using Arduino & Sensors -->
+          <article class="project-card glass-panel">
+            <div class="project-card-banner">
+              <div class="project-icon-badge"><i class="fa-solid fa-recycle"></i></div>
+              <span class="project-category">Eco-Tech &amp; Embedded</span>
+            </div>
+            <div class="project-card-body">
+              <h3 class="project-title">Smart Waste Segregation System</h3>
+              <p class="project-description">
+                Built an automated waste management prototype utilizing Arduino and specialized inductive/capacitive sensors to autonomously classify and segregate metallic vs. non-metallic waste at the point of disposal.
+              </p>
+              <div class="project-tech-stack">
+                <span class="tech-tag">Arduino Uno</span>
+                <span class="tech-tag">Proximity Sensors</span>
+                <span class="tech-tag">Servo Motors</span>
+                <span class="tech-tag">C/C++</span>
+              </div>
+            </div>
+            <div class="project-card-footer">
+              <button class="btn-link" onclick="alert('Project details: Separates metal and non-metal waste with automated sensor detection.')">
+                <span>View Details</span> <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </button>
+            </div>
+          </article>
+
+          <!-- Project 4: Smart System for Efficient Control & Improved Convenience -->
+          <article class="project-card glass-panel">
+            <div class="project-card-banner">
+              <div class="project-icon-badge"><i class="fa-solid fa-sliders"></i></div>
+              <span class="project-category">Smart Living &amp; Control</span>
+            </div>
+            <div class="project-card-body">
+              <h3 class="project-title">Smart System for Efficient Control</h3>
+              <p class="project-description">
+                Developed an optimized control system geared toward boosting convenience and energy conservation in daily environments through smart scheduling, responsive triggers, and intuitive user operation.
+              </p>
+              <div class="project-tech-stack">
+                <span class="tech-tag">Control Systems</span>
+                <span class="tech-tag">Energy Optimization</span>
+                <span class="tech-tag">User Convenience</span>
+                <span class="tech-tag">Algorithm Design</span>
+              </div>
+            </div>
+            <div class="project-card-footer">
+              <button class="btn-link" onclick="alert('Project details: Efficient control system boosting convenience and power savings.')">
+                <span>View Details</span> <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CERTIFICATIONS SECTION ================= -->
+    <section class="section cert-section" id="certifications" aria-label="Certifications and Achievements">
+      <div class="container">
+        <header class="section-header">
+          <p class="section-tag">05 // Honors &amp; Recognitions</p>
+          <h2 class="section-title">Certifications &amp; <span class="text-gradient">Achievements</span></h2>
+          <div class="section-underline"></div>
+        </header>
+
+        <div class="cert-grid">
+          <article class="cert-card glass-panel">
+            <div class="cert-badge-icon">
+              <i class="fa-solid fa-certificate"></i>
+            </div>
+            <div class="cert-info">
+              <span class="cert-issuer">Government of India / AICTE</span>
+              <h3 class="cert-title">Smart India Hackathon (SIH)</h3>
+              <p class="cert-desc">Certificate of Participation awarded for demonstrating innovation, problem solving, and technological team execution in the nation’s premier hackathon.</p>
+              <span class="cert-status"><i class="fa-solid fa-check-double"></i> Verified Credential</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT SECTION ================= -->
+    <section class="section contact-section" id="contact" aria-label="Contact Information and Inquiries">
+      <div class="container">
+        <header class="section-header">
+          <p class="section-tag">06 // Connect With Me</p>
+          <h2 class="section-title">Get In <span class="text-gradient">Touch</span></h2>
+          <div class="section-underline"></div>
+          <p class="section-desc">Have a software engineering opportunity, internship role, or open-source collaboration? My inbox is always open!</p>
+        </header>
+
+        <div class="contact-grid">
+          <!-- Direct Details Cards -->
+          <div class="contact-cards-column">
+            <a href="mailto:shivanitr133@gmail.com" class="contact-card glass-panel">
+              <div class="contact-card-icon"><i class="fa-solid fa-envelope"></i></div>
+              <div class="contact-card-text">
+                <span class="contact-label">Email Me</span>
+                <strong class="contact-value">shivanitr133@gmail.com</strong>
+              </div>
+            </a>
+
+            <a href="tel:+918904524648" class="contact-card glass-panel">
+              <div class="contact-card-icon"><i class="fa-solid fa-phone"></i></div>
+              <div class="contact-card-text">
+                <span class="contact-label">Phone</span>
+                <strong class="contact-value">+91 89045 24648</strong>
+              </div>
+            </a>
+
+            <a href="https://linkedin.com/in/shivani-ravi-1b54a5384" target="_blank" rel="noopener noreferrer" class="contact-card glass-panel">
+              <div class="contact-card-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+              <div class="contact-card-text">
+                <span class="contact-label">LinkedIn</span>
+                <strong class="contact-value">linkedin.com/in/shivani-ravi-1b54a5384</strong>
+              </div>
+            </a>
+
+            <a href="https://github.com/shivaniiseait-dev" target="_blank" rel="noopener noreferrer" class="contact-card glass-panel">
+              <div class="contact-card-icon"><i class="fa-brands fa-github"></i></div>
+              <div class="contact-card-text">
+                <span class="contact-label">GitHub</span>
+                <strong class="contact-value">github.com/shivaniiseait-dev</strong>
+              </div>
+            </a>
+
+            <div class="resume-download-card glass-panel">
+              <i class="fa-solid fa-file-pdf resume-icon"></i>
+              <div class="resume-card-info">
+                <h4>Download Complete Resume</h4>
+                <p>View my verified credentials, academic records, and projects.</p>
+              </div>
+              <a href="Resume.pdf" download class="btn btn-primary btn-sm">
+                <i class="fa-solid fa-download"></i> Download
+              </a>
+            </div>
+          </div>
+
+          <!-- Interactive Contact Form -->
+          <div class="contact-form-column">
+            <form class="contact-form glass-panel" id="contact-form" onsubmit="event.preventDefault(); alert('Thank you! Your message has been logged. Feel free to reach out via email as well.'); this.reset();">
+              <h3 class="form-title">Send a Direct Message</h3>
+              
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <div class="input-wrapper">
+                  <i class="fa-solid fa-user input-icon"></i>
+                  <input type="text" id="name" name="name" placeholder="John Doe" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Your Email Address</label>
+                <div class="input-wrapper">
+                  <i class="fa-solid fa-at input-icon"></i>
+                  <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <div class="input-wrapper">
+                  <i class="fa-solid fa-briefcase input-icon"></i>
+                  <input type="text" id="subject" name="subject" placeholder="Software Engineering Internship / Discussion" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message</label>
+                <div class="input-wrapper textarea-wrapper">
+                  <i class="fa-solid fa-message input-icon"></i>
+                  <textarea id="message" name="message" rows="4" placeholder="Hello Shivani, I came across your portfolio and would like to connect..." required></textarea>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block">
+                <span>Send Message</span>
+                <i class="fa-solid fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer" id="footer">
+    <div class="container footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#hero" class="brand-logo">
+            <span class="logo-code">&lt;</span>
+            <span>Shivani</span>
+            <span class="logo-accent">.Dev</span>
+            <span class="logo-code">/&gt;</span>
+          </a>
+          <p class="footer-tagline">
+            Building software with discipline, passion, and continuous learning.
+          </p>
+        </div>
+
+        <nav class="footer-nav" aria-label="Footer quick links">
+          <a href="#hero">Home</a>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#timeline">Timeline</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright-text">
+          &copy; <span id="current-year">2026</span> Shivani Ravi. All rights reserved. Crafted for Software Engineering.
+        </p>
+        <a href="#hero" class="back-to-top" aria-label="Back to top">
+          <span>Back to Top</span>
+          <i class="fa-solid fa-arrow-up"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main JavaScript File -->
+  <script src="main.js"></script>
+</body>
+</html>
